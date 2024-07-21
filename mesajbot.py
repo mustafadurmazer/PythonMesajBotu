@@ -65,8 +65,6 @@ def gönder():
     mesaj = f"Hava Durumu:\nMax/Min: {enyuksek} / {endusuk}\n{tanım}\nKur Bilgisi:\nDolar: {dolar}\nEuro: {euro}\nAltın: {altın}"
     
     requests.post(url=api, data={"chat_id": ID, "text": mesaj}).json()
-
-# Zamanlayıcıyı her gün saat 9'da çalışacak şekilde ayarlayın
 schedule.every().day.at("20:29").do(gönder)
 
 while True:
